@@ -9,7 +9,8 @@ class Perceptron():
         y = np.sign(np.dot(XX, self.w))
         return y
     
-    def fit(self, X, y, collect_weights=False):
+    def fit(self, X, y, initial_weights=np.zeros(3, dtype=float), collect_weights=False):
+        self.w = initial_weights
         weights = []
         steps = 0
         while(True):
